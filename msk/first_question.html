@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 1000px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+            ["АртемНестеров", 181, "#7ED270"],
+            ["Muaddib", 130, "#2ECB07"],
+            ["ИльяПогост", 117, "#F52396"],
+            ["PavlechkoSmirchek", 100, "#5B929C"],
+            ["Roman", 87, "#BC3FFB"],
+            ["© •`\\\\•`", 85, "#00851B"],
+            ["Pavel", 82, "#C6383A"],
+            ["ФилиппЭскин🥑🦖🎃", 69, "#6C711F"],
+            ["Гражданин Пятка", 62, "#033226"],
+            ["Иван", 44, "#D7F08D"],
+            ["ГлебаТучкин", 38, "#453781"],
+            ["АнтонСевостьянов", 30, "#81A6F6"],
+            ["Ксения", 15, "#09EC06"],
+            ["ТёмаРыбаков", 11, "#636929"],
+            ["Ruslan", 11, "#990890"],
+            ["NikitaKogor", 10, "#321986"],
+            ["ДмитрийБондарев", 10, "#AE1FF7"],
+            ["Pingvin", 8, "#96A88B"],
+            ["ИльяРоманцев (Бэгги)", 8, "#22C9E1"],
+            ["⛧𓃟⛧", 8, "#5B5808"],
+            ["Ruslan", 7, "#07119E"],
+            ["DenisGomes", 5, "#55EB83"],
+            ["АлексейРоманов-Плющев", 5, "#80B93B"],
+            ["MarkBoldyrev", 5, "#68060F"],
+            ["Olejah", 5, "#5C01C7"],
+            ["Коляс", 5, "#261CC0"],
+            ["🅱️airEmo Kid", 5, "#6EDEBC"],
+            ["IvanOdintsov", 4, "#D644BD"],
+            ["ДаниилЕфимов", 4, "#0E99A9"],
+            ["Stas_Khegai", 4, "#9FD4CA"],
+            ["Элиза", 4, "#CDA147"],
+            ["Danya", 4, "#5AF2ED"],
+            ["NataliaOzernaya", 3, "#8F0535"],
+            ["ЕвгенийХоффман", 3, "#410292"],
+            ["Артём🍩", 3, "#243461"],
+            ["mark", 2, "#31FC7C"],
+            ["AlDisaster", 2, "#C01F8D"],
+            ["Никита", 2, "#8A6146"],
+            ["РомаРома", 2, "#BEC65B"],
+            ["Даня", 2, "#B8FDFC"],
+            ["nastea", 2, "#DD88B5"],
+            ["MaxBashtan", 1, "#F43438"],
+            ["PavelMikheev", 1, "#A34C91"],
+            ["миша", 1, "#BF21B1"],
+            ["kkorostelew", 1, "#35BDF4"],
+            ["AlekseiTokun", 1, "#A14585"],
+            ["DmitryLasenko", 1, "#4E106E"],
+            ["DenisDenis", 1, "#58C85E"],
+            ["OP", 1, "#D2344A"],
+            ["fazan", 1, "#199B02"],
+            ["МихаилСумрак", 1, "#A6EFD0"],
+            ["genkururu", 1, "#13E1EF"],
+            ["AntonChepel", 1, "#00438C"],
+            ["Eugenii", 1, "#267780"],
+            ["Oleg", 1, "#1C9B7C"],
+            ["Алёна", 1, "#A1F68C"],
+            ["mike", 1, "#9ACEE5"],
+            ["Egor", 1, "#330B82"],
+            ["Илья", 1, "#BDD459"],
+            ["DariaBoyarinova", 1, "#A54EEB"],
+            ["BairThe Third", 1, "#7BD3D3"],
+            ["Deaf Mill", 1, "#582253"]
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 1 Голос за первый вопрос BPM",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+    }
+    </script>
+</head>
+
+</html>
