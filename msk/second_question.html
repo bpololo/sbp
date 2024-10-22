@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 1000px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+            ["PavlechkoSmirchek", 136, "#FE6EA7"],
+            ["АртемНестеров", 117, "#561CF6"],
+            ["ГлебаТучкин", 114, "#B71E7D"],
+            ["Pavel", 98, "#AB47E2"],
+            ["Roman", 96, "#0DDA46"],
+            ["Muaddib", 92, "#7F5A67"],
+            ["Гражданин Пятка", 78, "#D7B379"],
+            ["© •`\\\\•`", 74, "#C0A103"],
+            ["ИльяПогост", 73, "#EC60F7"],
+            ["Иван", 63, "#2C687A"],
+            ["⛧𓃟⛧", 53, "#9274EF"],
+            ["ФилиппЭскин🥑🦖🎃", 47, "#88583A"],
+            ["АнтонСевостьянов", 32, "#02342F"],
+            ["Olejah", 28, "#4BEFAA"],
+            ["Eugenii", 27, "#9F6E87"],
+            ["Pingvin", 22, "#7B107D"],
+            ["ТёмаРыбаков", 21, "#9F0041"],
+            ["NikitaKogor", 18, "#F0A8D7"],
+            ["Ксения", 15, "#351845"],
+            ["Danya", 14, "#AC6CC1"],
+            ["ИльяРоманцев (Бэгги)", 12, "#44E45F"],
+            ["🅱️airEmo Kid", 11, "#89E8BB"],
+            ["ДмитрийБондарев", 10, "#260D9D"],
+            ["MarkBoldyrev", 9, "#9970C6"],
+            ["🦀🧠", 9, "#3DB629"],
+            ["ДаниилЕфимов", 8, "#00EC26"],
+            ["Ruslan", 7, "#B5B930"],
+            ["Илья", 7, "#E5BC4E"],
+            ["GoshaPliushkov", 6, "#F47398"],
+            ["AlexanderGolubnichiy", 5, "#545F3D"],
+            ["Коляс", 5, "#A9D5BE"],
+            ["mike", 5, "#AED125"],
+            ["Oleg S", 4, "#3E6B59"],
+            ["Stas_Khegai", 4, "#7EDB5C"],
+            ["ЕвгенийХоффман", 4, "#027E92"],
+            ["genkururu", 4, "#8336F5"],
+            ["ГеоргийАпарин", 4, "#7F9F87"],
+            ["Ruslan", 4, "#E50A81"],
+            ["DenisGomes", 3, "#72DE2C"],
+            ["ЕгорДьячков", 3, "#1B7CF1"],
+            ["DmitryLasenko", 3, "#7AE81E"],
+            ["kosta_krapiva", 3, "#CBE6F2"],
+            ["РомаРома", 3, "#944F83"],
+            ["Deaf Mill", 3, "#5DFCEB"],
+            ["Егор 🪗", 2, "#D3D765"],
+            ["НоЯен", 2, "#153F80"],
+            ["George", 2, "#85DCA8"],
+            ["BairThe Third", 2, "#4F05F7"],
+            ["IvanOdintsov", 1, "#99331B"],
+            ["АлексейРоманов-Плющев", 1, "#07A04C"],
+            ["AVA", 1, "#6B833E"],
+            ["mark", 1, "#9C2301"],
+            ["MikhailMikylin", 1, "#D00555"],
+            ["AlekseiTokun", 1, "#4802A9"],
+            ["DenisDenis", 1, "#FF698C"],
+            ["Веня", 1, "#46F2CA"],
+            ["YeahGoRrka", 1, "#CA0D1F"],
+            ["vsees", 1, "#568E23"],
+            ["ЭдуардРакин", 1, "#4922B7"],
+            ["DimaPavloff", 1, "#467A8B"],
+            ["АндрейИванов", 1, "#954E56"],
+            ["AlexanderChopik", 1, "#183F67"],
+            ["Nickolay", 1, "#41D10C"],
+            ["Oleg", 1, "#CD5FE1"],
+            ["KatyaUshakova", 1, "#E4E6F2"],
+            ["Никита", 1, "#0BE52B"],
+            ["ANTONSAMSHIL", 1, "#824FC1"],
+            ["Артем", 1, "#16B6A9"],
+            ["DariaBoyarinova", 1, "#2729D1"],
+            ["nastea", 1, "#B07614"],
+            ["Артём🍩", 1, "#8B95ED"]
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 2 Голос за второй вопрос",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+    }
+    </script>
+</head>
+
+</html>
