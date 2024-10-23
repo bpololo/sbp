@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+            ["genkururu", 67, getRandomColor()],
+            ["Eugenii", 66, getRandomColor()],
+            ["Никита", 58, getRandomColor()],
+            ["mike", 55, getRandomColor()],
+            ["Oleg S", 48, getRandomColor()],
+            ["George", 46, getRandomColor()],
+            ["Pingvin", 43, getRandomColor()],
+            ["Olejah", 41, getRandomColor()],
+            ["Егор 🪗", 31, getRandomColor()],
+            ["mark", 22, getRandomColor()],
+            ["АлексейРоманов-Плющев", 19, getRandomColor()],
+            ["Vlad", 18, getRandomColor()],
+            ["АлександрЛебедев", 14, getRandomColor()],
+            ["Greg", 12, getRandomColor()],
+            ["andypáwłowsky", 12, getRandomColor()],
+            ["GeorgeAverin", 10, getRandomColor()],
+            ["Рома", 7, getRandomColor()],
+            ["Muaddib", 6, getRandomColor()],
+            ["AlexBad", 6, getRandomColor()],
+            ["methmunk", 6, getRandomColor()],
+            ["PavelMikheev", 5, getRandomColor()],
+            ["Pavel Tws", 5, getRandomColor()],
+            ["Pavel", 4, getRandomColor()],
+            ["АртемНестеров", 4, getRandomColor()],
+            ["Maxim", 4, getRandomColor()],
+            ["pavelmarland", 3, getRandomColor()],
+            ["ЕгорПетров", 3, getRandomColor()],
+            ["© •`\\\\•`", 2, getRandomColor()],
+            ["PavlechkoSmirchek", 2, getRandomColor()],
+            ["Roman", 2, getRandomColor()],
+            ["ФилиппЭскин🥑🦖🎃", 2, getRandomColor()],
+            ["PavlikAlekseev", 2, getRandomColor()],
+            ["ГлебаТучкин", 2, getRandomColor()],
+            ["АльбинаБайдина", 1, getRandomColor()],
+            ["devserj", 1, getRandomColor()],
+            ["Гражданин Пятка", 1, getRandomColor()],
+            ["Lohmatiy", 1, getRandomColor()],
+            ["Chernenko", 1, getRandomColor()],
+            ["John", 1, getRandomColor()],
+            ["NikitaKogor", 1, getRandomColor()],
+            ["Москвич", 1, getRandomColor()],
+            ["TeeGua", 1, getRandomColor()],
+            ["AndrewSherstnev", 1, getRandomColor()],
+            ["ГусьПупси", 1, getRandomColor()],
+            ["AntonBentFrame", 1, getRandomColor()],
+            ["ANTONSAMSHIL", 1, getRandomColor()],
+            ["ДенисРешетников", 1, getRandomColor()],
+            ["ГрегориХаусетерун", 1, getRandomColor()],
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 1 Голос за первый вопрос",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+</head>
+
+</html>
