@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<script>
+google.charts.load("current", { packages: ["corechart"] })
+google.charts.setOnLoadCallback(drawChart)
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ["Имя", "Голоса", { role: "style" }],
+        ["Ололо", 128, "#ACC38A"],
+        ["Pingvin", 45, "#C4317A"],
+        ["Olejah", 44, "#41E618"],
+        ["Eugenii", 37, "#F8DC91"],
+        ["mike", 35, "#3E06A8"],
+        ["genkururu", 32, "#C7E81A"],
+        ["Никита", 31, "#A6D076"],
+        ["George", 25, "#8D06AA"],
+        ["Oleg S", 23, "#E848AC"],
+        ["Егор 🪗", 23, "#8E6D6F"],
+        ["АлександрЛебедев", 22, "#C1488E"],
+        ["Pavel", 22, "#AFB28A"],
+        ["mark", 16, "#855B84"],
+        ["Vlad", 15, "#BA096F"],
+        ["АлексейРоманов-Плющев", 13, "#947E70"],
+        ["PavlechkoSmirchek", 12, "#D6CD80"],
+        ["АртемНестеров", 9, "#8A8CB3"],
+        ["methmunk", 9, "#544A2D"],
+        ["pavelmarland", 8, "#658EC0"],
+        ["GeorgeAverin", 8, "#9B0DFE"],
+        ["ЕгорПетров", 7, "#3793DB"],
+        ["Гражданин Пятка", 6, "#B5DDEE"],
+        ["ГлебаТучкин", 6, "#868137"],
+        ["andypáwłowsky", 6, "#948BCB"],
+        ["Muaddib", 5, "#00985F"],
+        ["Greg", 5, "#D0DAF5"],
+        ["Roman", 4, "#3E0B54"],
+        ["ГалинаДжи", 4, "#F0CA70"],
+        ["© •`\\\\•`", 3, "#30496C"],
+        ["Москвич", 3, "#0D4175"],
+        ["ФилиппЭскин🥑🦖🎃", 3, "#BC5912"],
+        ["АнтонСевостьянов", 3, "#DA062F"],
+        ["AlexBad", 3, "#E17B41"],
+        ["Pavel Tws", 3, "#7ADE0E"],
+        ["ANTONSAMSHIL", 3, "#78C173"],
+        ["Рома", 3, "#7BCB25"],
+        ["RomaLiubimtsev", 2, "#DB0A97"],
+        ["PavelMikheev", 2, "#A1E6FE"],
+        ["Николай", 2, "#86F8E0"],
+        ["AlexanderKostin", 2, "#58462C"],
+        ["TeeGua", 2, "#466076"],
+        ["Maxim", 2, "#38EF87"],
+        ["ИльяПогост", 2, "#8F815B"],
+        ["z2n", 1, "#C8434E"],
+        ["John", 1, "#1F5D21"],
+        ["NikitaKogor", 1, "#396CD3"],
+        ["SergeyBatalev", 1, "#2BA6D1"],
+        ["MarkBoldyrev", 1, "#13B340"],
+        ["BELOMORKANAL", 1, "#DB2C5A"],
+        ["ДмитрийБондарев", 1, "#805EE3"],
+        ["LadyMary", 1, "#E20633"],
+        ["КорнейКарасикъ", 1, "#AB572A"],
+        ["Евгений", 1, "#13B5A8"],
+        ["ПавелГагулин", 1, "#6215AE"],
+        ["Динозаврик", 1, "#9A4546"],
+        ["MikhailMamontov", 1, "#31A2D1"],
+        ["Даня1312", 1, "#840866"],
+        ["ДмитрийВерховинский", 1, "#2639DB"],
+        ["JeffreyJeff", 1, "#44C0CF"],
+        ["HandsomeGuy", 1, "#8DB385"],
+        ["sashamikhailova", 1, "#3B081C"],
+        ["Кирилл", 1, "#2520CF"],
+        ["Иван", 1, "#730B63"],
+        ["AlexanderB", 1, "#795BB4"],
+        ["ViktorKorolev", 1, "#B91750"],
+        ["Рейкъявикский Горисполком", 1, "#F098CD"],
+        ["Ъ", 1, "#897AD6"],
+        ["Анастасия", 1, "#FCEAF9"],
+        ["pinkpunk", 1, "#45E5B6"],
+        ["OgurechnayaPomidorka", 1, "#7B9542"],
+        ["‏Լիպա ⁧ ‏", 1, "#C20961"],
+        ["Val", 1, "#62988D"],
+        ["Ganesha here", 1, "#18115B"],
+        ["Alexander🇩🇰", 1, "#5C0A3F"],
+        ["ВелоАртист", 1, "#99029D"],
+        ["Хотрод", 1, "#5F2EED"],
+        ["УгонСараев", 1, "#CF6092"]
+    ])
+
+    var view = new google.visualization.DataView(data)
+    view.setColumns([
+        0,
+        1,
+        { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+        2,
+    ])
+
+    var options = {
+        title: "Рис. 2 Голос за второй вопрос",
+        width: 1000,
+        height: 2400,
+        bar: { groupWidth: "75%" },
+        legend: { position: "none" },
+    }
+    var chart = new google.visualization.BarChart(
+        document.getElementById("barchart_values"),
+    )
+    chart.draw(view, options)
+}
+</script>
+
+<body>
+    <div id="barchart_values" style="width: 1000px; height: 2400px;"></div>
+</body>
+
+</html>
