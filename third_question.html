@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<script>
+google.charts.load("current", { packages: ["corechart"] })
+google.charts.setOnLoadCallback(drawChart)
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ["Имя", "Голоса", { role: "style" }],
+        ["Olejah", 40, "#AE3541"],
+        ["Pingvin", 28, "#D1AA34"],
+        ["Никита", 27, "#2AB5AC"],
+        ["Pavel", 26, "#894CFE"],
+        ["mike", 23, "#EDE7E3"],
+        ["Егор 🪗", 23, "#2F9D4C"],
+        ["George", 23, "#E5E636"],
+        ["АртемНестеров", 22, "#A3E2C6"],
+        ["Eugenii", 22, "#8DB83B"],
+        ["genkururu", 21, "#445F4A"],
+        ["АлександрЛебедев", 17, "#CB5D1C"],
+        ["PavlechkoSmirchek", 17, "#2C3ED7"],
+        ["Vlad", 17, "#0BF0B4"],
+        ["Oleg S", 15, "#7A1033"],
+        ["Гражданин Пятка", 13, "#8C2B1D"],
+        ["mark", 11, "#E17182"],
+        ["GeorgeAverin", 11, "#1C5CA0"],
+        ["АлексейРоманов-Плющев", 10, "#ABD2BC"],
+        ["Muaddib", 10, "#6FBF1B"],
+        ["ГалинаДжи", 8, "#3D8F6F"],
+        ["ANTONSAMSHIL", 8, "#A9B383"],
+        ["andypáwłowsky", 8, "#2C0FA7"],
+        ["ЕгорПетров", 7, "#C1A246"],
+        ["© •`\\\\•`", 6, "#1B665E"],
+        ["PavelMikheev", 6, "#330D67"],
+        ["Greg", 6, "#F932A7"],
+        ["pavelmarland", 6, "#C36637"],
+        ["ГлебаТучкин", 6, "#67509A"],
+        ["Рома", 6, "#76D680"],
+        ["Roman", 5, "#2D1952"],
+        ["ФилиппЭскин🥑🦖🎃", 5, "#1895AC"],
+        ["AlexanderKostin", 4, "#9B6DEF"],
+        ["Pavel Tws", 4, "#A1CD85"],
+        ["АнтонСевостьянов", 3, "#1487E5"],
+        ["AlexBad", 3, "#CD53A8"],
+        ["Иван", 3, "#8241E7"],
+        ["SergeyBatalev", 2, "#EB3743"],
+        ["ДмитрийБондарев", 2, "#FAC91D"],
+        ["Григорий", 2, "#5C328E"],
+        ["Даниил🪐", 2, "#1C367D"],
+        ["wwwSSS", 2, "#A97CA4"],
+        ["TeeGua", 2, "#F761D4"],
+        ["AlexanderB", 2, "#A0921E"],
+        ["Nevermind", 2, "#D78626"],
+        ["Рейкъявикский Горисполком", 2, "#1F2B7C"],
+        ["RomaLiubimtsev", 1, "#B55E14"],
+        ["АндрейРадченко", 1, "#C323A9"],
+        ["VLADISLAV", 1, "#FDBFAC"],
+        ["АльбинаБайдина", 1, "#6C7B61"],
+        ["devserj", 1, "#411B6A"],
+        ["Zullkree", 1, "#A62134"],
+        ["VladimirShvets", 1, "#FED698"],
+        ["NikitaKogor", 1, "#CBAD4B"],
+        ["MikhailMikylin", 1, "#0B5A07"],
+        ["МитяГабриелов", 1, "#E9CB66"],
+        ["КорнейКарасикъ", 1, "#9927F9"],
+        ["Дмитрий", 1, "#F9442F"],
+        ["Москвич", 1, "#C5A9D5"],
+        ["Динозаврик", 1, "#1FFD0A"],
+        ["Влад", 1, "#72A596"],
+        ["DimaPavloff", 1, "#233BE6"],
+        ["простотак", 1, "#66BD52"],
+        ["enchantment", 1, "#53F3EB"],
+        ["Кирилл", 1, "#9F6DA1"],
+        ["Danya", 1, "#381C1A"],
+        ["methmunk", 1, "#C185E3"],
+        ["Арсений", 1, "#8249FD"],
+        ["Seán", 1, "#69965D"],
+        ["евгений", 1, "#ABDA64"],
+        ["lhohlandl", 1, "#BC08C4"],
+        ["pinkpunk", 1, "#650F3B"],
+        ["Maxim", 1, "#83C7C5"],
+        ["OgurechnayaPomidorka", 1, "#A48B23"],
+        ["ИльяПогост", 1, "#A70118"],
+        ["MishaOrlov", 1, "#A73A03"],
+        ["ГрегориХаусетерун", 1, "#004571"],
+        ["RustyShackleford", 1, "#8EA478"],
+        ["SupremeMARAT", 1, "#89350A"],
+        ["Артём", 1, "#11D0B6"]
+    ])
+
+    var view = new google.visualization.DataView(data)
+    view.setColumns([
+        0,
+        1,
+        { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+        2,
+    ])
+
+    var options = {
+        title: "Рис. 1 Голос за первый вопрос",
+        width: 1000,
+        height: 2400,
+        bar: { groupWidth: "75%" },
+        legend: { position: "none" },
+    }
+    var chart = new google.visualization.BarChart(
+        document.getElementById("barchart_values"),
+    )
+    chart.draw(view, options)
+}
+</script>
+
+<body>
+    <div id="barchart_values" style="width: 1000px; height: 2400px;"></div>
+</body>
+
+</html>
