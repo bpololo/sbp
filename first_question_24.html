@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+            ["Никита", 47, "#88C80A"],
+            ["genkururu", 46, "#2D9A87"],
+            ["George", 42, "#7BE83C"],
+            ["mike", 40, "#A278B6"],
+            ["Oleg S", 35, "#340EB2"],
+            ["Eugenii", 35, "#A8D611"],
+            ["Егор 🪗", 30, "#EBBF2A"],
+            ["Pingvin", 28, "#DDBA96"],
+            ["Olejah", 24, "#F77EDB"],
+            ["mark", 22, "#ABC737"],
+            ["АлексейРоманов-Плющев", 19, "#FB4311"],
+            ["Vlad", 18, "#C0DE43"],
+            ["АлександрЛебедев", 14, "#A36ECC"],
+            ["GeorgeAverin", 10, "#5A6603"],
+            ["Pavel Tws", 10, "#7AAD4B"],
+            ["andypáwłowsky", 7, "#206CC3"],
+            ["Рома", 7, "#F68EA1"],
+            ["methmunk", 6, "#3FE3C7"],
+            ["PavelMikheev", 5, "#63ADD5"],
+            ["АртемНестеров", 4, "#128D0C"],
+            ["Maxim", 4, "#590F91"],
+            ["Muaddib", 3, "#634B12"],
+            ["Pavel", 3, "#1A9C87"],
+            ["Greg", 2, "#C70B23"],
+            ["PavlikAlekseev", 2, "#1211BE"],
+            ["© •`\\\\•`", 1, "#F3335A"],
+            ["Гражданин Пятка", 1, "#375FF3"],
+            ["PavlechkoSmirchek", 1, "#113B5D"],
+            ["Roman", 1, "#8D24DF"],
+            ["Москвич", 1, "#7B6625"],
+            ["pavelmarland", 1, "#62955E"],
+            ["ЕгорПетров", 1, "#1CD4D4"],
+            ["ФилиппЭскин🥑🦖🎃", 1, "#3FE112"],
+            ["ГлебаТучкин", 1, "#528814"],
+            ["ANTON SAMSHIL", 1, "#45C529"]
+
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 1 Голос за первый вопрос",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+</head>
+
+</html>
