@@ -3,7 +3,7 @@ document.write(' \
       <div id="menu"> \
         <div class="pure-menu"> \
             <ul class="pure-menu-list"> \
-                <li class="pure-menu-heading">All</li> \
+                <li class="pure-menu-heading">凸(￣ヘ￣)</li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="attendance.html">Посещаемость</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="sbp_vs_bpm_attendance.html">SBP vs BPM</a></li> \
                 <li class="pure-menu-heading">2023-24</li> \
