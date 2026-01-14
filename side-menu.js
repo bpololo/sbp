@@ -7,7 +7,7 @@ document.write(' \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="attendance.html">Посещаемость</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="sbp_vs_bpm_attendance.html">Сравнение</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="first_question.html">1-й вопрос 23-24</a></li> \
-                <li class="pure-menu-item"><a class="pure-menu-link" href="first_question_24.html">2-й вопрос 24</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="first_question_24.html">1-й вопрос 24</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="second_question.html">2-й вопрос 24</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="third_question.html">3-й вопрос 24</a></li> \
                 <li class="pure-menu-heading">2025</li> \
