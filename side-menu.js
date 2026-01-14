@@ -13,7 +13,7 @@ document.write('
                 <li><a href="first_question_25.html">Первый вопрос 25</a></li> \
                 <li><a href="second_question_25.html">Второй вопрос 25</a></li> \
                 <li><a href="third_question_25.html">Третий вопрос 25</a></li> \
-            </ul>
-        </div>
-    </div>
+            </ul> \
+        </div> \
+    </div> \
 ');
