@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+    <link rel="stylesheet" href="pure-men.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="layout">
+        <script src="side-menu.js"></script>
+            <div id="main">
+                    <div class="header">
+                    </div>
+                    <div class="content">
+                        <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+                    </div>
+            </div>
+    </div>
+</body>
     <script>
     google.charts.load("current", { packages: ["corechart"] })
     google.charts.setOnLoadCallback(drawChart)
@@ -80,6 +93,5 @@
         }
     }
     </script>
-</head>
-
+<script src="ui.js"></script>
 </html>
