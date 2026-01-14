@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+              ["Ole Lukøje",26,"#3341BE"],
+              ["Pavel Scherbakov",26,"#A61C05"],
+              ["genkururu",23,"#2BD041"],
+              ["George",17,"#B5A88B"],
+              ["la la mouche 🪰",16,"#8E63F7"],
+              ["Владимир",16,"#769FAF"],
+              ["Olejah",16,"#E26ED6"],
+              ["Александр Лебедев",15,"#12D650"],
+              ["Eugenii",14,"#2C36FE"],
+              ["Anton Saddlehead",12,"#0D86A4"],
+              ["Андрей Бескаравайный",11,"#B38F9D"],
+              ["Vlad",10,"#77A3E0"],
+              ["Михаил Солдатенков",10,"#0C70CE"],
+              ["Никита",9,"#55C8D2"],
+              ["Егор 🪗",8,"#4D50CF"],
+              ["George Averin",6,"#0BA726"],
+              ["Pingvin",5,"#E0B230"],
+              ["Pavel",5,"#A1D7FD"],
+              ["Гражданин Пятка",4,"#A09733"],
+              ["Muaddib",4,"#70B953"],
+              ["fazan",3,"#E3BE0E"],
+              ["bruukva",3,"#7F04E9"],
+              ["Артем Нестеров",2,"#F3501B"],
+              ["pavelmarland",2,"#50C67C"],
+              ["nastea",2,"#9C379F"],
+              ["Volga",2,"#61B04B"],
+              ["Mark Boldyrev",1,"#6611A3"],
+              ["Pavlechko Smirchek",1,"#C8B638"],
+              ["Roman",1,"#86966E"],
+              ["Антон Севостьянов",1,"#BF5463"]
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 1 Голос за третий вопрос 2025",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+</head>
+
+</html>
