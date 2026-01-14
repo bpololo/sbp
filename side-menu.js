@@ -2,7 +2,7 @@ document.write(' \
      <div id="menu"> \
         <div class="pure-menu"> \
             <ul class="pure-menu-list"> \
-                <li class="pure-menu-heading">2023-24</li>
+                <li class="pure-menu-heading">2023-24</li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="attendance.html">Посещаемость</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="sbp_vs_bpm_attendance.html">Сравнение</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="first_question.html">Первый вопрос 23-24</a></li> \
