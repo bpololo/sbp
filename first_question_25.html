@@ -4,11 +4,16 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <script src="side-menu.js"></script>
     <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+</body>
     <script>
     google.charts.load("current", { packages: ["corechart"] })
     google.charts.setOnLoadCallback(drawChart)
-
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ["Имя", "Голоса", { role: "style" }],
@@ -73,7 +78,5 @@
         }
     }
     </script>
-    <p><a href="index.html">Туда-сюда-обратно</a></p>
-</head>
-
+    <script src="/js/ui.js"></script>
 </html>
