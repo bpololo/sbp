@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="pure-men.css">
+    <link rel="stylesheet" href="side-menu.css">
 </head>
+<body>
+    <div id="layout">
+        <script src="side-menu.js"></script>
+            <div id="main">
+                    <div class="header">
+                    </div>
+                    <div class="content">
+                        <div id="calendar_basic" style="width: 1024px; height: 768px;"></div>
+                    </div>
+            </div>
+    </div>
+</body>
     <script>
     google.charts.load("current", { packages: ["calendar"] })
     google.charts.setOnLoadCallback(drawChart)
@@ -179,8 +192,5 @@
         chart.draw(dataTable, options)
     }
     </script>
-<body>
-        <div id="calendar_basic" style="width: 1024px; height: 768px;"></div>
-</body>
-
+    <script src="ui.js"></script>
 </html>
