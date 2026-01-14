@@ -1,5 +1,5 @@
-document.write('
-\
+document.write(' \
+   \            
      <div id="menu"> \
         <div class="pure-menu"> \
             <ul class="pure-menu-list"> \
