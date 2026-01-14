@@ -10,9 +10,9 @@ document.write(' \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="second_question.html">Второй вопрос 24</a></li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="third_question.html">Третий вопрос 24</a></li> \
                 <li class="pure-menu-heading">2025</li> \
-                <li><a href="first_question_25.html">Первый вопрос 25</a></li> \
-                <li><a href="second_question_25.html">Второй вопрос 25</a></li> \
-                <li><a href="third_question_25.html">Третий вопрос 25</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="first_question_25.html">Первый вопрос 25</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="second_question_25.html">Второй вопрос 25</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="third_question_25.html">Третий вопрос 25</a></li> \
             </ul> \
         </div> \
     </div> \
