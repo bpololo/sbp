@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+              ["Ole Lukøje",42,"#E83D9D"],
+              ["genkururu",37,"#E0F1C6"],
+              ["Eugenii",33,"#9A7459"],
+              ["George",32,"#FA60A9"],
+              ["Pavel Scherbakov",29,"#10B079"],
+              ["Olejah",26,"#C21789"],
+              ["la la mouche 🪰",25,"#9F8804"], \
+              ["Александр Лебедев",23,"#9554D5"],
+              ["Михаил Солдатенков",17,"#EEA417"],
+              ["Владимир",14,"#268991"],
+              ["Андрей Бескаравайный",13,"#04CE33"],
+              ["Pingvin",13,"#6C9AE1"],
+              ["Vlad",13,"#0C3D27"],
+              ["Егор 🪗",13,"#78BB00"],
+              ["Никита",12,"#180D89"],
+              ["Кирилл Файн",10,"#276825"],
+              ["George Averin",6,"#27EA93"],
+              ["mark",3,"#3C770E"],
+              ["Anton Saddlehead",3,"#5B5DE8"], 
+              ["Pavel Mikheev",2,"#8289E4"],
+              ["Гражданин Пятка",2,"#9E1B0B"],
+              ["ЛР",2,"#0D62AB"],
+              ["fazan",2,"#0F0D37"],
+              ["Артем Нестеров",1,"#D15D0F"],
+              ["Антон Севостьянов",1,"#871BC9"],
+              ["Ruslan",1,"#BC72B2"],
+              ["mathpunk",1,"#4A811D"],
+              ["Олег Олег",1,"#BEF0A4"],
+              ["SlavaBulkin",1,"#1B3BAB"]
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Рис. 1 Голос за первый вопрос 2024",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+</head>
+
+</html>
