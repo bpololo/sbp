@@ -17,8 +17,8 @@ document.write(' \
             <ul class="pure-menu-list"> \
                 <li class="pure-menu-heading" style="background:#ff00cd">BPM 2025</li> \
                 <li class="pure-menu-item"><a class="pure-menu-link" href="first_question_msk25.html">1-й вопрос</a></li> \
-                <li class="pure-menu-item"><a class="pure-menu-link" href="second_question_25.html">2-й вопрос</a></li> \
-                <li class="pure-menu-item"><a class="pure-menu-link" href="third_question_25.html">3-й вопрос</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="second_question_msk25.html">2-й вопрос</a></li> \
+                <li class="pure-menu-item"><a class="pure-menu-link" href="third_question_msk25.html">3-й вопрос</a></li> \
             </ul> \
         </div> \
     </div> \
