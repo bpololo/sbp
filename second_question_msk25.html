@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="pure-men.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="layout">
+        <script src="side-menu.js"></script>
+            <div id="main">
+                    <div class="header">
+                    </div>
+                    <div class="content">
+                        <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+                    </div>
+            </div>
+    </div>
+</body>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+             ["АртемНестеров",47,"#5FA6C7"],["Muaddib",38,"#BFE82D"],["PavlechkoSmirchek",33,"#998CE8"],["АнтонСевостьянов",24,"#D05472"],["Pavel",20,"#5CB411"],["Ruslan",20,"#FF48B4"],["TonyTony",17,"#F6F77C"],["© •`\\\\•`",15,"#6DAD2A"],["Roman",15,"#2EEA73"],["Иван",14,"#F6C82F"],["АлексейРоманов-Плющев",13,"#379053"],["YeahGoRrka",12,"#1AC2B0"],["Гражданин Пятка",8,"#7DD015"],["Olejah",7,"#69F714"],["ГлебаТучкин",5,"#EAF9EE"],[".._.",5,"#0171D5"],["nastea",5,"#BCC515"],["bcsim",4,"#A7B939"],["Ole Lukøje",3,"#CD18BB"],["ДмитрийБондарев",3,"#799862"],["Eugenii",3,"#21F5DD"],["Pavel Scherbakov",3,"#D7726A"],["АндрейБескаравайный",2,"#D69432"],["ФилиппЭскин🥑🦖🎃",2,"#7CD89D"],["genkururu",2,"#9E3E65"],["ИльяПогост",2,"#632892"],["mark",1,"#9723B3"],["АлександрЛебедев",1,"#EC0FA7"],["СашаПест",1,"#46E991"],["Владимир",1,"#4E3736"],["МихаилСолдатенков",1,"#063BD0"],["Егор 🪗",1,"#ED8447"],["GeorgeAverin",1,"#5EF006"],["AntonSaddlehead",1,"#89CB73"],["George",1,"#429071"],["Dr",1,"#CD5FA8"]
+
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Голос за первый вопрос МСК 2025",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+    <script src="ui.js"></script>
+</html>
