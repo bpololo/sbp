@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="pure-men.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="layout">
+        <script src="side-menu.js"></script>
+            <div id="main">
+                    <div class="header">
+                    </div>
+                    <div class="content">
+                        <div id="barchart_values" style="width: 100px; height: 2400px;"></div>
+                    </div>
+            </div>
+    </div>
+</body>
+    <script>
+    google.charts.load("current", { packages: ["corechart"] })
+    google.charts.setOnLoadCallback(drawChart)
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Имя", "Голоса", { role: "style" }],
+              ["АртемНестеров",33,"#CD3015"],
+              ["© •`\\\\•`",23,"#89E351"],
+              ["Roman",22,"#0D630E"],
+              ["Muaddib",21,"#1E15A3"],
+              ["Pavel",14,"#400B1C"],
+              ["PavlechkoSmirchek",13,"#3A49AF"],
+              ["Ruslan",8,"#2AFB5F"],
+              ["АлексейРоманов-Плющев",5,"#776717"],
+              ["Иван",4,"#DB85EE"],
+              ["nastea",4,"#AA6E0E"],
+              ["ДмитрийБондарев",3,"#4B5846"],
+              ["ФилиппЭскин🥑🦖🎃",3,"#661190"],
+              ["АнтонСевостьянов",3,"#809DE0"],
+              ["ГлебаТучкин",3,"#A89E31"],
+              ["ИльяПогост",3,"#42E809"],
+              ["Oleg",2,"#347541"],
+              ["Ole Lukøje",2,"#89CDE9"],
+              ["АлександрЛебедев",2,"#CE82ED"],
+              ["Иван",2,"#1F03F0"],
+              ["YeahGoRrka",2,"#719F0D"],
+              ["genkururu",2,"#6DF190"],
+              ["Eugenii",2,"#34C277"],
+              ["Никита",2,"#84EB5E"], 
+              ["МихаилСолдатенков",2,"#BA2C3A"],
+              ["George",2,"#ED840C"],
+              ["Гражданин Пятка",1,"#4B9010"],
+              ["АндрейБескаравайный",1,"#20CA87"],
+              ["MarkBoldyrev",1,"#CBBBAC"],
+              ["bcsim",1,"#D9294D"],
+              ["TonyTony",1,"#117CE7"],
+              ["СашаПест",1,"#E2990D"],
+              ["Владимир",1,"#7C1B03"],
+              ["Olejah",1,"#CD83F2"],
+              ["tango",1,"#31C6C6"],
+              ["bruukva",1,"#4BB1CE"],
+              ["Егор 🪗",1,"#03B99B"],
+              ["Pavel Scherbakov",1,"#BABDCA"],
+              [".._.",1,"#A414EA"]]
+        ])
+
+        var view = new google.visualization.DataView(data)
+        view.setColumns([
+            0,
+            1,
+            { calc: "stringify", sourceColumn: 1, type: "string", role: "annotation" },
+            2,
+        ])
+
+        var options = {
+            title: "Голос за первый вопрос МСК 2025",
+            width: 1000,
+            height: 2400,
+            bar: { groupWidth: "75%" },
+            legend: { position: "none" },
+        }
+        var chart = new google.visualization.BarChart(
+            document.getElementById("barchart_values"),
+        )
+        chart.draw(view, options)
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    }
+    </script>
+    <script src="ui.js"></script>
+</html>
